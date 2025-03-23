@@ -11,7 +11,8 @@
         "edit",
         "mcp"
       ],
-      "source": "project"
+      "source": "project",
+      "customInstructions": "Always check to make sure memory bank is active. Explicitly prompt Emily when she needs to do a manual action. terminal commands must be PowerShell. Explicitly prompt Emily when she needs to do a manual action. Save to memory and prompt user to start a new task when token cost nears $0.5"
     }
   ]
 }

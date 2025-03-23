@@ -1,8 +1,8 @@
 <div align="center">
 
-### ✨MCP server tools✨
+### ✨MCP server tools✨ 
 
-#### Still working on full MCP functionality in RooFlow modes. If you have issues, there is a global [Default mode](https://github.com/GreatScottyMac/RooFlow/blob/main/config/default-mode/README.md) available which runs with the Roo Code default system prompt.
+#### Still working on full MCP functionality in RooFlow modes. If you have issues, there is a global [Default mode](https://github.com/GreatScottyMac/RooFlow/blob/main/config/default-mode/README.md) available which runs with the Roo Code default system prompt. 
 
 <br>
   
@@ -151,7 +151,7 @@ flowchart LR
       ```
    3. Make the script executable:
       ```bash
-      chmod +x insert-variables.sh
+      sudo chmod +x insert-variables.sh
       ```
    4. Run the script:
       ```bash
@@ -211,6 +211,23 @@ The Memory Bank is a directory named `memory-bank` located in your project's roo
 | `systemPatterns.md` | (Optional) Documents recurring patterns and standards used in the project (coding patterns, architectural patterns, testing patterns). |
 
 RooFlow automatically manages these files. You generally don't need to edit them directly, although you can review them to understand the AI's knowledge.
+
+## 🛠️ Automation Scripts
+
+To make it easier to apply RooFlow to your projects, we've created PowerShell scripts that automate the setup process:
+
+- [**apply-to-existing-project.ps1**](scripts/apply-to-existing-project.ps1): Applies RooFlow custom modes to an existing project
+- [**setup-new-project.ps1**](scripts/setup-new-project.ps1): Creates a new project with RooFlow custom modes
+
+See the [scripts documentation](scripts/README.md) for detailed usage instructions.
+
+## 📖 Documentation
+
+For more detailed information on applying RooFlow to your projects, see:
+
+- [Applying to Existing Projects](docs/applying-to-existing-projects.md): How to add RooFlow to projects that are already set up
+- [Applying to Future Projects](docs/applying-to-future-projects.md): How to start new projects with RooFlow from the beginning
+- [Documentation Overview](docs/README.md): General information about RooFlow custom modes and memory bank
 
 ## ✨ Features
 
