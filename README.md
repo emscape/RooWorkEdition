@@ -1,8 +1,8 @@
 <div align="center">
 
-### ✨MCP server tools✨ 
+### ✨MCP server tools✨
 
-#### Still working on full MCP functionality in RooFlow modes. If you have issues, there is a global [Default mode](https://github.com/GreatScottyMac/RooFlow/blob/main/config/default-mode/README.md) available which runs with the Roo Code default system prompt. 
+#### Still working on full MCP functionality in RooFlow modes. If you have issues, there is a global [Default mode](https://github.com/GreatScottyMac/RooFlow/blob/main/config/default-mode/README.md) available which runs with the Roo Code default system prompt.
 
 <br>
   
@@ -18,6 +18,24 @@
 [![RooFlow](https://img.shields.io/badge/View%20on-GitHub-lightgrey.svg)](https://github.com/GreatScottyMac/RooFlow)
 
 </div>
+
+# Fork Notice
+
+This repository is a fork of [GreatScottyMac's RooFlow](https://github.com/GreatScottyMac/RooFlow) with personal modifications made by Emily. No upstream changes are intended. Please refer to the original repository for the canonical version.
+
+## Emily's Modifications
+
+The following modifications have been made to the original RooFlow project:
+
+- Added custom instructions for language preference (English)
+- Added global instructions for interaction style:
+  - Ask clarifying questions one at a time
+  - Perform one step at a time
+  - Prompt for manual actions
+  - Use PowerShell syntax for terminal commands
+  - Prompt to start a new task when API token cost nears $0.5
+- Added mode-specific instructions for the architect mode
+- Enhanced functionality for applying RooFlow to existing projects and new projects with PowerShell scripts
 
 ## 🎯 Overview
 
