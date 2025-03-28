@@ -1,258 +1,121 @@
-<div align="center">
+# Atlassian Document Format (ADF) Toolkit
 
-### ✨MCP server tools✨ 
+This toolkit provides resources and tools for working with Atlassian Document Format (ADF), the JSON-based format used by Atlassian products like Confluence and Jira for rich text content.
 
-#### Still working on full MCP functionality in RooFlow modes. If you have issues, there is a global [Default mode](https://github.com/GreatScottyMac/RooFlow/blob/main/config/default-mode/README.md) available which runs with the Roo Code default system prompt. 
+## Contents
 
-<br>
-  
-### ☢️☢️☢️ Footgun in Use ☢️☢️☢️
+- `adf-documentation.json` - Comprehensive documentation on ADF format in ADF format itself
+- `adf-viewer.html` - Browser-based viewer for ADF documents
+- `markdown-to-adf.html` - Browser-based converter from Markdown to ADF
+- `markdown-to-adf.js` - Command-line Node.js script for converting Markdown to ADF
+- `sample.md` - Sample Markdown file for testing conversion
+- `example-adf.json` - Simple example of an ADF document
 
-<br>
+## ADF Documentation
 
-# 🚀 RooFlow 🌊
+The `adf-documentation.json` file contains comprehensive documentation on the ADF format, including:
 
-**Persistent Project Context and Streamlined AI-Assisted Development**
+- Basic structure
+- Common elements (headings, paragraphs, lists, etc.)
+- Text formatting
+- Code blocks
+- Tables
+- Links
+- Panels
+- Advanced features
 
-[![Roo Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://github.com/RooVetGit/Roo-Code)
-[![RooFlow](https://img.shields.io/badge/View%20on-GitHub-lightgrey.svg)](https://github.com/GreatScottyMac/RooFlow)
+You can view this documentation using the ADF Viewer.
 
-</div>
+## ADF Viewer
 
-# Fork Notice
+The `adf-viewer.html` file provides a browser-based viewer for ADF documents. It allows you to:
 
-This repository is a fork of [GreatScottyMac's RooFlow](https://github.com/GreatScottyMac/RooFlow) with personal modifications made by Emily. No upstream changes are intended. Please refer to the original repository for the canonical version.
+- Load ADF JSON files
+- Paste ADF JSON directly
+- View pre-loaded examples
+- See how ADF documents will be rendered
 
-## Emily's Modifications
+To use the viewer:
 
-The following modifications have been made to the original RooFlow project:
+1. Open `adf-viewer.html` in a web browser
+2. Choose one of the loading options:
+   - Load from File: Select an ADF JSON file
+   - Paste JSON: Paste ADF JSON content and click "Render"
+   - Examples: Load one of the pre-configured examples
 
-- Added custom instructions for language preference (English)
-- Added global instructions for interaction style:
-  - Ask clarifying questions one at a time
-  - Perform one step at a time
-  - Prompt for manual actions
-  - Use PowerShell syntax for terminal commands
-  - Prompt to start a new task when API token cost nears $0.5
-- Added mode-specific instructions for the architect mode
-- Enhanced functionality for applying RooFlow to existing projects and new projects with PowerShell scripts
+## Markdown to ADF Converter (Browser)
 
-## 🎯 Overview
+The `markdown-to-adf.html` file provides a browser-based converter from Markdown to ADF. It allows you to:
 
-RooFlow enhances AI-assisted development in VS Code by providing **persistent project context** and **optimized mode interactions**, resulting in **reduced token consumption** and a more efficient workflow.  It builds upon the concepts of the Roo Code Memory Bank, but streamlines the process and introduces a more integrated system of modes. RooFlow ensures your AI assistant maintains a deep understanding of your project across sessions, even after interruptions.
+- Enter Markdown text
+- Convert it to ADF JSON
+- Copy the ADF JSON to clipboard
+- View the result in the ADF Viewer
 
-### Key Improvements over Roo Code Memory Bank:
+Supported Markdown features:
+- Headings (# to ######)
+- Paragraphs
+- Bold (**text**)
+- Italic (*text*)
+- Code blocks (```language)
+- Inline code (`code`)
+- Bullet lists
+- Numbered lists
+- Links [text](url)
 
-*   **Reduced Token Consumption:** Optimized prompts and instructions minimize token usage.
-*   **Five Integrated Modes:**  Architect, Code, Test, Debug, and Ask modes work together seamlessly.
-*   **Simplified Setup:**  Easier installation and configuration.
-*   **Streamlined Real-time Updates:**  More efficient and targeted Memory Bank updates.
-*   **Clearer Instructions:**  Improved YAML-based rule files for better readability and maintainability.
+To use the converter:
 
-### Key Components
+1. Open `markdown-to-adf.html` in a web browser
+2. Enter or paste Markdown in the left panel
+3. Click "Convert to ADF"
+4. The ADF JSON will appear in the right panel
+5. Use "Copy ADF to Clipboard" to copy the result
+6. Use "View in ADF Viewer" to see how it will be rendered
 
-```mermaid
-flowchart LR
-    A["RooFlow"] --> D["Toolkit"]
-    A["RooFlow"] --> M["Real-time Updates"]
-    D --> C["Mode Rules"]
-    B["Memory Bank"] --> E["Product Context"] & N["Active Context"] & F["Decisions"] & G["Progress"]
-    C --> H["Architect"] & I["Code"] & J["Ask"] & K["Debug"] & L["Test"]
-    M["Real-time Updates"] --> B
-```
+## Markdown to ADF Converter (Command Line)
 
-- 🧠 **Memory Bank**: Persistent storage for project knowledge (automatically managed).
-- 💻 **System Prompts**: YAML-based core instructions for each mode (`.roo/system-prompt-[mode]`).
-- 🔧 **VS Code Integration**: Seamless development experience within VS Code.
-- ⚡ **Real-time Updates**:  Automatic Memory Bank updates triggered by significant events.
+The `markdown-to-adf.js` file provides a command-line Node.js script for converting Markdown to ADF. This is useful for batch processing or integration with other tools.
 
-## 🚀 Quick Start
+To use the command-line converter:
 
-   ###  1. Installation
-
-   1.  **Install Roo Code Extension:** Ensure you have the Roo Code extension installed in VS Code.
-   2.  **Download [RooFlow Files](https://github.com/GreatScottyMac/RooFlow/tree/main/config):** Download the following files from this repository:
-   * [`system-prompt-architect`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.roo/system-prompt-architect)
-   * [`system-prompt-ask`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.roo/system-prompt-ask)
-   * [`system-prompt-code`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.roo/system-prompt-code)
-   * [`system-prompt-debug`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.roo/system-prompt-debug) 
-   * [`system-prompt-test`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.roo/system-prompt-test)
-   * [`.rooignore`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.rooignore)
-   * [`.roomodes`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.roomodes)
-   * [`insert-variables.cmd`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/insert-variables.cmd)For Windows OS
-   * [`insert-variables.sh`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/insert-variables.sh)For Unix/Linux/macOS
-   3.  **Place Files in Project:**
-   *   Create a directory named [`.roo`](https://github.com/GreatScottyMac/RooFlow/tree/main/config/.roo) in your project's root directory.
-   *   Place the `system-prompt-[mode]` files inside the [`.roo`](https://github.com/GreatScottyMac/RooFlow/tree/main/config/.roo) directory.
-   * Place the [`.rooignore`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.rooignore) file in the project's root directory. (Or add !memory-bank/ to your existing .rooignore file)
-   * Place the [`.roomodes`](https://github.com/GreatScottyMac/RooFlow/blob/main/config/.roomodes) file in the project's root directory (Or add its contents to your existing .roomodes file)
-   * Place the appropriate `insert-variables.[sh/cmd]` script for your platform in the project's root directory.
-
-   Your project structure should look like this:
-
+1. Ensure Node.js is installed
+2. Make the script executable (on Unix-like systems):
    ```
-   project-root
-    ├── .roo
-    |    ├── system-prompt-architect
-    |    ├── system-prompt-ask
-    |    ├── system-prompt-code
-    |    ├── system-prompt-debug
-    |    └── system-prompt-test
-    ├── memory-bank (This directory will be created automatically by Roo after your first prompt)
-    |    ├── activeContext.md
-    |    ├── decisionLog.md
-    |    ├── productContext.md
-    |    ├── progress.md
-    |    └── systemPatterns.md
-    ├── .rooignore               
-    ├── .roomodes
-    └──insert-variables.[sh/cmd]
+   chmod +x markdown-to-adf.js
+   ```
+3. Run the script:
+   ```
+   node markdown-to-adf.js input.md [output.json]
+   ```
+   If output file is not specified, it will use the input filename with .json extension.
+
+## Sample Files
+
+- `sample.md` - A sample Markdown file demonstrating the features supported by the converter
+- `example-adf.json` - A simple example of an ADF document
+
+## Usage Examples
+
+### Convert Markdown to ADF and View the Result
+
+1. Open `markdown-to-adf.html` in a browser
+2. Enter or paste Markdown content
+3. Click "Convert to ADF"
+4. Click "View in ADF Viewer" to see the rendered result
+
+### Convert Markdown to ADF via Command Line
+
 ```
-   4. **Run insert-variables script**
+node markdown-to-adf.js sample.md sample-adf.json
+```
 
-   #### For Windows: 
-   1. Open Command Prompt or PowerShell
-   2. Navigate to your project:
-      ```cmd
-      cd path\to\your\project
-      ```
-   3. Run the script:
+### View an ADF Document
 
-      From Command Prompt:
+1. Open `adf-viewer.html` in a browser
+2. Click "Load from File" and select your ADF JSON file
+3. The document will be rendered in the viewer
 
-      ```cmd
-      insert-variables.cmd
-      ```
+## Resources
 
-      From Powershell:
-
-      ```powershell
-      .\insert-variables.cmd
-      ```
-      Troubleshooting (Windows)
-   * **If you get "access denied" or execution policy errors:**
-   1. Open PowerShell as Administrator
-   2. Run this command once:
-      ```powershell
-      Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-      ```
-   3. Close Administrator PowerShell
-   4. Try running the script again from your project directory
-   * **If you see "Error: .roo directory not found", verify your directory structure.**
-   * **If using PowerShell 7+, run as:**
-      ```powershell
-      cmd /c insert-variables.cmd
-      ```
-   #### For Unix/Linux/macOS
-   1. Open Terminal
-   2. Navigate to your project:
-      ```bash
-      cd path/to/your/project
-      ```
-   3. Make the script executable:
-      ```bash
-      sudo chmod +x insert-variables.sh
-      ```
-   4. Run the script:
-      ```bash
-      ./insert-variables.sh
-      ```
-
-      Troubleshooting (Unix/Linux/macOS)
-   * **If you see "Permission denied", run:** 
-      ```bash
-      sudo chmod +x insert-variables.sh
-      ```
-   * **If you see "Error: .roo directory not found", verify your directory structure**
-
-    
-   #### Expected Output
-   The script will:
-   1. Detect your system configuration
-   2. Process each system prompt file
-   3. Show "Processing" and "Completed" messages for each file
-   4. Display "Done" when finished
-
-
-   #### Variables Being Replaced
-   The script replaces these placeholders with your system-specific values:
-   - OS_PLACEHOLDER (e.g., "Windows 10 Pro" or "Ubuntu 22.04")
-   - SHELL_PLACEHOLDER (e.g., "cmd" or "bash")
-   - HOME_PLACEHOLDER (your home directory)
-   - WORKSPACE_PLACEHOLDER (your project directory)
-   - GLOBAL_SETTINGS_PLACEHOLDER (Roo Code global settings path)
-   - MCP_LOCATION_PLACEHOLDER (Roo Code MCP directory path)
-   - MCP_SETTINGS_PLACEHOLDER (Roo Code MCP settings path)
-
-   #### Next Steps
-   After running the script:
-   1. Verify that `.roo/system-prompt-*` files contain your system paths
-   2. Start using VS Code with the Roo Code extension
-   3. The Memory Bank will be initialized on first use
-
-   ### 2. Using RooFlow
-
-   1.  **Start a Chat:** Open a new Roo Code chat in your project.
-   2.  **Select a Mode:** Choose the appropriate mode (Architect, Code, Test, Debug, Ask) for your task.
-   3.  **Interact with Roo:**  Give Roo instructions and ask questions. Roo will automatically use the Memory Bank to maintain context.
-   4.  **Memory Bank Initialization:**  If you start a chat in a project *without* a `memory-bank/` directory, Roo will suggest switching to Architect mode and guide you through the initialization process.
-   5. **"Update Memory Bank" Command:** At any time, you can type "Update Memory Bank" or "UMB" to force a synchronization of the chat session's information into the Memory Bank. This is useful for ensuring continuity across sessions or before switching modes.
-
-## 📚 Memory Bank Structure
-
-The Memory Bank is a directory named `memory-bank` located in your project's root. It contains several Markdown files that store different aspects of your project's knowledge:
-
-| File                 | Purpose                                                                                                                               |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `activeContext.md`   | Tracks the current session's context: recent changes, current goals, and open questions/issues.                                       |
-| `decisionLog.md`     | Records architectural and implementation decisions, including the context, decision, rationale, and implementation details.        |
-| `productContext.md`  | Provides a high-level overview of the project, including its goals, features, and overall architecture.                             |
-| `progress.md`        | Tracks the progress of the project, including completed work, current tasks, and next steps.  Uses a task list format.               |
-| `systemPatterns.md` | (Optional) Documents recurring patterns and standards used in the project (coding patterns, architectural patterns, testing patterns). |
-
-RooFlow automatically manages these files. You generally don't need to edit them directly, although you can review them to understand the AI's knowledge.
-
-## 🛠️ Automation Scripts
-
-To make it easier to apply RooFlow to your projects, we've created PowerShell scripts that automate the setup process:
-
-- [**apply-to-existing-project.ps1**](scripts/apply-to-existing-project.ps1): Applies RooFlow custom modes to an existing project
-- [**setup-new-project.ps1**](scripts/setup-new-project.ps1): Creates a new project with RooFlow custom modes
-
-See the [scripts documentation](scripts/README.md) for detailed usage instructions.
-
-## 📖 Documentation
-
-For more detailed information on applying RooFlow to your projects, see:
-
-- [Applying to Existing Projects](docs/applying-to-existing-projects.md): How to add RooFlow to projects that are already set up
-- [Applying to Future Projects](docs/applying-to-future-projects.md): How to start new projects with RooFlow from the beginning
-- [Documentation Overview](docs/README.md): General information about RooFlow custom modes and memory bank
-
-## ✨ Features
-
-### 🧠 Persistent Context
-
-RooFlow remembers project details across sessions, maintaining a consistent understanding of your codebase, design decisions, and progress.
-
-### ⚡ Real-time Updates
-
-The Memory Bank is updated automatically based on significant events within each mode, ensuring that the context is always up-to-date.
-
-### 🤝 Mode Collaboration
-
-The five modes (Architect, Code, Test, Debug, Ask) are designed to work together seamlessly.  They can switch between each other as needed, and they share information through the Memory Bank.
-
-### ⬇️ Reduced Token Consumption
-
-RooFlow is designed to use fewer tokens than previous systems, making it more efficient and cost-effective.
-
-## 📝 UMB Command
-The command "Update Memory Bank" or "UMB" can be given at any time to update the memory bank with information from the current chat session.
-
-## Contributing
-
-Contributions to RooFlow are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file (you'll need to create this) for guidelines.
-
-## License
-  [Apache 2.0](LICENSE)
+- [Official Atlassian Document Format Documentation](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/)
+- [Atlassian Editor](https://atlaskit.atlassian.com/packages/editor/editor-core)
