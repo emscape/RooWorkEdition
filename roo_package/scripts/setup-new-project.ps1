@@ -317,7 +317,9 @@ Project initialization on $timestamp
     Write-Host "Copying ADF tools to project..." -ForegroundColor Cyan
     
     # Get the path to the repository root (where the script is located)
-    $repoRoot = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
+    # Get the path to the package's tools directory (relative to this script)
+    $packageToolsDir = Join-Path -Path (Split-Path -Parent $PSCommandPath) -ChildPath "../tools/adf"
+    $packageToolsDir = Resolve-Path -Path $packageToolsDir # Ensure it's an absolute path
     
     $toolFiles = @(
         "adf-viewer.html",
@@ -328,7 +330,7 @@ Project initialization on $timestamp
     )
     
     foreach ($file in $toolFiles) {
-        $sourcePath = Join-Path -Path $repoRoot -ChildPath $file
+        $sourcePath = Join-Path -Path $packageToolsDir -ChildPath $file
         if (Test-Path $sourcePath) {
             Copy-Item -Path $sourcePath -Destination "$toolsDir/" -Force
             Write-Host "Copied $file to $toolsDir/" -ForegroundColor Green
