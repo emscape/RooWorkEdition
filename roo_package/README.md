@@ -14,33 +14,35 @@ The goal is to provide a self-contained distribution for initializing a project 
 ## Contents
 
 - `scripts/`: Contains the setup scripts:
-    - `apply-to-existing-project.ps1`: Use this to add RooFlow features to an existing project.
-    - `setup-new-project.ps1`: Use this to create a new project directory and initialize it with RooFlow features.
+    - `apply-to-existing-project.ps1`: Use this to add RooFlow features to the current project.
+    - `setup-new-project.ps1`: Use this to initialize the current directory with RooFlow features.
 - `tools/adf/`: Contains the necessary tools for the ADF documentation workflow (viewer, converter, etc.).
 
 ## How to Use
 
-1.  **Place the Package:** Store this `roo_package` directory in a convenient, accessible location (e.g., `C:\RooTools\roo_package`).
+1.  **Place the Package:** Copy the contents of this `roo_package` directory into your project directory.
 
 2.  **Choose the Right Script:**
     *   **For an existing project:** Use `apply-to-existing-project.ps1`.
     *   **For a new project:** Use `setup-new-project.ps1`.
 
-3.  **Run the Script:** Open PowerShell and execute the chosen script, providing the necessary parameters.
+3.  **Run the Script:** Open PowerShell, navigate to your project directory, and execute the chosen script.
 
     **Example: Applying to an Existing Project**
-    Navigate *outside* the package directory. Run the script, pointing to its location within the package and specifying the target project path.
+    Navigate to your project directory and run:
     ```powershell
-    # Assuming roo_package is in C:\RooTools
-    C:\RooTools\roo_package\scripts\apply-to-existing-project.ps1 -ProjectPath "C:\path\to\your\existing\project"
+    .\apply-to-existing-project.ps1
     ```
 
     **Example: Setting up a New Project**
-    Navigate *outside* the package directory. Run the script, pointing to its location within the package and specifying the new project name and the parent directory where it should be created.
+    Navigate to your project directory and run:
     ```powershell
-    # Assuming roo_package is in C:\RooTools
-    # This will create C:\path\to\parent\directory\MyNewProject
-    C:\RooTools\roo_package\scripts\setup-new-project.ps1 -ProjectName "MyNewProject" -ProjectPath "C:\path\to\parent\directory"
+    .\setup-new-project.ps1
+    ```
+    
+    The script will automatically use your current directory name as the project name. If you want to specify a different name, you can use:
+    ```powershell
+    .\setup-new-project.ps1 -ProjectName "CustomProjectName"
     ```
 
 4.  **Follow Script Prompts:** The scripts will output progress and may provide next steps upon completion.

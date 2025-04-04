@@ -1,30 +1,37 @@
 # Setup New Project with RooFlow Custom Modes
-# This script automates the process of creating a new project with RooFlow custom modes, memory system, and ADF integration
-# Usage: .\setup-new-project.ps1 -ProjectName "YourProjectName" -ProjectPath "C:\path\to\parent\directory"
+# This script automates the process of setting up RooFlow custom modes, memory system, and ADF integration in the current directory
+# Usage: .\setup-new-project.ps1 [-ProjectName "YourProjectName"]
+# Note: This script assumes it's being run from the root directory of the project you want to set up
+# If ProjectName is not provided, the current directory name will be used
 
 param(
-    [Parameter(Mandatory=$true)]
-    [string]$ProjectName,
-    
     [Parameter(Mandatory=$false)]
-    [string]$ProjectPath = (Get-Location).Path
+    [string]$ProjectName = ""
 )
 
-# Construct the full project path
-$fullProjectPath = Join-Path -Path $ProjectPath -ChildPath $ProjectName
-
-# Check if the project directory already exists
-if (Test-Path -Path $fullProjectPath -PathType Container) {
-    Write-Error "A directory with the name '$ProjectName' already exists at '$ProjectPath'"
-    exit 1
+# If ProjectName is not provided, use the current directory name
+if ([string]::IsNullOrEmpty($ProjectName)) {
+    $ProjectName = Split-Path -Path (Get-Location).Path -Leaf
+    Write-Host "Using current directory name as project name: $ProjectName" -ForegroundColor Yellow
 }
 
-# Create the project directory
-Write-Host "Creating new project: $ProjectName at $fullProjectPath" -ForegroundColor Green
-New-Item -Path $fullProjectPath -ItemType Directory | Out-Null
+# Use the current directory as the project path
+$fullProjectPath = Get-Location
 
-# Navigate to the project directory
-Push-Location $fullProjectPath
+# Check if the current directory is empty or contains only a few standard files
+$allowedFiles = @('.git', '.gitignore', 'README.md', 'LICENSE')
+$currentFiles = Get-ChildItem -Force | Where-Object { $_.Name -notin $allowedFiles }
+
+if ($currentFiles.Count -gt 0) {
+    Write-Host "Warning: The current directory is not empty. It's recommended to run this script in an empty directory or a newly initialized repository." -ForegroundColor Yellow
+    $confirmation = Read-Host "Do you want to continue anyway? (y/n)"
+    if ($confirmation -ne 'y') {
+        Write-Host "Setup cancelled by user." -ForegroundColor Red
+        exit 1
+    }
+}
+
+Write-Host "Setting up RooFlow for project: $ProjectName in the current directory" -ForegroundColor Green
 
 try {
     # Step 1: Initialize Git repository
@@ -457,20 +464,15 @@ This project uses a documentation-as-code approach with support for Atlassian Do
         Write-Host "Updated .gitignore to include ADF documentation directories" -ForegroundColor Green
     }
 
-    Write-Host "`nNew project '$ProjectName' has been successfully set up with RooFlow custom modes, memory system, and ADF integration!" -ForegroundColor Green
-    Write-Host "`nProject location: $fullProjectPath" -ForegroundColor Green
+    Write-Host "`nProject '$ProjectName' has been successfully set up with RooFlow custom modes, memory system, and ADF integration!" -ForegroundColor Green
     
     Write-Host "`nNext steps:" -ForegroundColor Cyan
-    Write-Host "1. Open the project in VS Code: code '$fullProjectPath'" -ForegroundColor Cyan
-    Write-Host "2. Configure MCP servers (optional): .\scripts\Configure-McpServers.ps1" -ForegroundColor Cyan
-    Write-Host "3. Start a new Roo Code task in Architect mode" -ForegroundColor Cyan
-    Write-Host "4. Begin with a project planning session" -ForegroundColor Cyan
-    Write-Host "5. Use 'Update Memory Bank' or 'UMB' command at key milestones" -ForegroundColor Cyan
-    Write-Host "6. For ADF documentation conversion, ensure Node.js is installed and run: .\convert-docs.ps1" -ForegroundColor Cyan
+    Write-Host "1. Configure MCP servers (optional): .\scripts\Configure-McpServers.ps1" -ForegroundColor Cyan
+    Write-Host "2. Start a new Roo Code task in Architect mode" -ForegroundColor Cyan
+    Write-Host "3. Begin with a project planning session" -ForegroundColor Cyan
+    Write-Host "4. Use 'Update Memory Bank' or 'UMB' command at key milestones" -ForegroundColor Cyan
+    Write-Host "5. For ADF documentation conversion, ensure Node.js is installed and run: .\convert-docs.ps1" -ForegroundColor Cyan
 
 } catch {
     Write-Error "An error occurred: $_"
-} finally {
-    # Return to the original directory
-    Pop-Location
 }

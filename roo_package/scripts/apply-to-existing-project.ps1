@@ -1,23 +1,15 @@
 # Apply RooFlow Custom Modes to Existing Project
-# This script automates the process of applying RooFlow custom modes, memory system, and ADF integration to an existing project
-# Usage: .\apply-to-existing-project.ps1 -ProjectPath "C:\path\to\your\project"
+# This script automates the process of applying RooFlow custom modes, memory system, and ADF integration to the current project
+# Usage: .\apply-to-existing-project.ps1
+# Note: This script assumes it's being run from the root directory of the project you want to modify
 
-param(
-    [Parameter(Mandatory=$true)]
-    [string]$ProjectPath
-)
+param()
 
-# Verify the project path exists
-if (-not (Test-Path -Path $ProjectPath -PathType Container)) {
-    Write-Error "The specified project path does not exist: $ProjectPath"
-    exit 1
-}
-
-# Navigate to the project directory
-Push-Location $ProjectPath
+# Use the current directory as the project path
+$ProjectPath = Get-Location
 
 try {
-    Write-Host "Applying RooFlow custom modes to project at: $ProjectPath" -ForegroundColor Green
+    Write-Host "Applying RooFlow custom modes to the current project" -ForegroundColor Green
 
     # Step 1: Create .roomodes file if it doesn't exist
     if (-not (Test-Path -Path ".roomodes")) {
@@ -105,7 +97,7 @@ build/
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     
     # Get project name from directory
-    $projectName = Split-Path -Path $ProjectPath -Leaf
+    $projectName = Split-Path -Path $ProjectPath.Path -Leaf
 
     # Step 4: Create memory bank files if they don't exist
     $memoryBankFiles = @{
@@ -470,7 +462,4 @@ This project uses a documentation-as-code approach with support for Atlassian Do
 
 } catch {
     Write-Error "An error occurred: $_"
-} finally {
-    # Return to the original directory
-    Pop-Location
 }
