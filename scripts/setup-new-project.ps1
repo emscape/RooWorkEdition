@@ -118,6 +118,13 @@ coverage
 *.swo
 *~
 .DS_Store
+
+# Roo-related files and directories
+.roo/
+.roomodes
+.rooignore
+memory-bank/
+memory-archives/
 '@
     Set-Content -Path ".gitignore" -Value $gitignoreContent
     Write-Host "Created .gitignore file" -ForegroundColor Green

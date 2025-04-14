@@ -431,6 +431,7 @@ This project uses a documentation-as-code approach with support for Atlassian Do
         $gitignoreContent = Get-Content ".gitignore"
         $modified = $false
         
+        # Add ADF documentation directories exceptions
         if (-not ($gitignoreContent -contains "!$toolsDir/")) {
             Add-Content -Path ".gitignore" -Value "!$toolsDir/"
             $modified = $true
@@ -441,10 +442,33 @@ This project uses a documentation-as-code approach with support for Atlassian Do
             $modified = $true
         }
         
+        # Add Roo-related files and directories
+        $rooEntries = @(
+            ".roo/",
+            ".roomodes",
+            ".rooignore",
+            "memory-bank/",
+            "memory-archives/"
+        )
+        
+        $rooModified = $false
+        foreach ($entry in $rooEntries) {
+            if (-not ($gitignoreContent -contains $entry)) {
+                Add-Content -Path ".gitignore" -Value $entry
+                $rooModified = $true
+            }
+        }
+        
         if ($modified) {
             Write-Host "Updated .gitignore to include ADF documentation directories" -ForegroundColor Green
         } else {
             Write-Host ".gitignore already includes ADF documentation directories" -ForegroundColor Yellow
+        }
+        
+        if ($rooModified) {
+            Write-Host "Updated .gitignore to include Roo-related files and directories" -ForegroundColor Green
+        } else {
+            Write-Host ".gitignore already includes Roo-related files and directories" -ForegroundColor Yellow
         }
     }
 
