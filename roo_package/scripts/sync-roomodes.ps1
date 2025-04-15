@@ -1,5 +1,5 @@
 # Sync .roomodes Files
-# This script finds all .roomodes files in the c:/repos directory and ensures they match the reference file at C:\repos\cce-cq\.roomodes
+# This script finds all .roomodes files in the c:/repos directory and ensures they match the reference file at C:/repos/.roomodes
 # Usage: .\sync-roomodes.ps1 [-UpdateFiles $true]
 
 param(
@@ -8,7 +8,7 @@ param(
 )
 
 # Define the reference .roomodes file path
-$referenceFilePath = "C:\repos\cce-cq\.roomodes"
+$referenceFilePath = "C:/repos/.roomodes"
 
 # Check if the reference file exists
 if (-not (Test-Path -Path $referenceFilePath)) {

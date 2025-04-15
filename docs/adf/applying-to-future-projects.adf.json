@@ -1,0 +1,843 @@
+{
+  "version": 1,
+  "type": "doc",
+  "content": [
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 1
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Applying RooFlow Custom Modes to Future Projects"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "This guide explains how to set up new projects with RooFlow custom modes and memory bank functionality from the beginning."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Step 1: Project Setup with Memory Bank"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "When starting a new project, follow these steps to incorporate RooFlow's memory bank functionality:"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Create your new project directory:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "mkdir your-new-project\r\ncd your-new-project\r\n"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Initialize your version control system (if using Git):"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "git init\r\n"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Create a "
+                },
+                {
+                  "type": "text",
+                  "text": ".roomodes",
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " file in the project root:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "New-Item -Path \".roomodes\" -ItemType File\r\n"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Add the following content to the "
+                },
+                {
+                  "type": "text",
+                  "text": ".roomodes",
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " file:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "json"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "{\r\n  \"customModes\": [\r\n    {\r\n      \"slug\": \"test\",\r\n      \"name\": \"Test\",\r\n      \"roleDefinition\": \"You are Roo's Test mode for this specific project\",\r\n      \"groups\": [\r\n        \"read\",\r\n        \"browser\",\r\n        \"command\",\r\n        \"edit\",\r\n        \"mcp\"\r\n      ],\r\n      \"source\": \"project\",\r\n      \"customInstructions\": \"Always check to make sure memory bank is active. Explicitly prompt Emily when she needs to do a manual action. terminal commands must be PowerShell. Explicitly prompt Emily when she needs to do a manual action. Save to memory and prompt user to start a new task when token cost nears $0.5\"\r\n    }\r\n  ]\r\n}\r\n"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Create a "
+                },
+                {
+                  "type": "text",
+                  "text": ".rooignore",
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " file to exclude unnecessary files from Roo's context:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "New-Item -Path \".rooignore\" -ItemType File\r\n"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Add common patterns to ignore:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "plain"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "node_modules/\r\ndist/\r\nbuild/\r\n.git/\r\n*.log\r\n"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Step 2: Initialize Memory Bank Structure"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Create the memory bank directory and required files:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "mkdir memory-bank\r\nNew-Item -Path \"memory-bank/productContext.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/activeContext.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/systemPatterns.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/decisionLog.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/progress.md\" -ItemType File\r\n"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Initialize the memory bank files with project-specific content:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "productContext.md Template"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "markdown"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Product Context\r\n\r\n## Project Overview\r\n[Brief description of your new project]\r\n\r\n## Goals\r\n- [Primary goal]\r\n- [Secondary goal]\r\n\r\n## Features\r\n- [Core feature 1]\r\n- [Core feature 2]\r\n\r\n## Architecture\r\n[Initial architecture decisions]\r\n"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "activeContext.md Template"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "markdown"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Active Context\r\n\r\n## Current Focus\r\nInitial project setup and planning\r\n\r\n## Recent Changes\r\nProject initialization\r\n\r\n## Open Questions/Issues\r\n- [Initial question/issue 1]\r\n- [Initial question/issue 2]\r\n"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "systemPatterns.md Template"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "markdown"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# System Patterns\r\n\r\n## Design Patterns\r\n[Initial design patterns]\r\n\r\n## Architectural Patterns\r\n[Initial architectural patterns]\r\n\r\n## Coding Standards\r\n[Project-specific coding standards]\r\n"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "decisionLog.md Template"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "markdown"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Decision Log\r\n\r\n[YYYY-MM-DD HH:MM:SS] - Project initialized with RooFlow memory bank\r\n"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "progress.md Template"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "markdown"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# Progress\r\n\r\n[YYYY-MM-DD HH:MM:SS] - Project setup with RooFlow memory bank\r\n"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Step 3: Project Kickoff with Roo"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Open your project in VS Code"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Start a new Roo Code task in Architect mode:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Click on the Roo Code icon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Select \"Architect\" from the mode dropdown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Roo will detect the memory bank and activate it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Begin with a project planning session:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Define the project scope"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Outline the architecture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plan initial development tasks"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Use the \"Update Memory Bank\" or \"UMB\" command at key milestones to ensure all context is saved"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Step 4: Development Workflow"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Use different Roo modes based on your current task:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Architect mode for planning and design"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Code mode for implementation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Debug mode for troubleshooting"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Ask mode for questions and information"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Test mode for testing strategies"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Regularly update the memory bank to maintain project context"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "For collaborative projects, ensure all team members have access to the memory bank files (e.g., through version control)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Template Script"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "You can use this PowerShell script to quickly set up a new project with RooFlow memory bank:"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "# RooFlow Project Setup Script\r\nparam(\r\n    [Parameter(Mandatory=$true)]\r\n    [string]$ProjectName\r\n)\r\n\r\n# Create project directory\r\nNew-Item -Path $ProjectName -ItemType Directory\r\nSet-Location $ProjectName\r\n\r\n# Initialize Git\r\ngit init\r\n\r\n# Create .roomodes file\r\n$roomodesContent = @'\r\n{\r\n  \"customModes\": [\r\n    {\r\n      \"slug\": \"test\",\r\n      \"name\": \"Test\",\r\n      \"roleDefinition\": \"You are Roo's Test mode for this specific project\",\r\n      \"groups\": [\r\n        \"read\",\r\n        \"browser\",\r\n        \"command\",\r\n        \"edit\",\r\n        \"mcp\"\r\n      ],\r\n      \"source\": \"project\",\r\n      \"customInstructions\": \"Always check to make sure memory bank is active. Explicitly prompt Emily when she needs to do a manual action. terminal commands must be PowerShell. Explicitly prompt Emily when she needs to do a manual action. Save to memory and prompt user to start a new task when token cost nears $0.5\"\r\n    }\r\n  ]\r\n}\r\n'@\r\nSet-Content -Path \".roomodes\" -Value $roomodesContent\r\n\r\n# Create .rooignore file\r\n$rooignoreContent = @'\r\nnode_modules/\r\ndist/\r\nbuild/\r\n.git/\r\n*.log\r\n'@\r\nSet-Content -Path \".rooignore\" -Value $rooignoreContent\r\n\r\n# Create memory bank directory and files\r\nNew-Item -Path \"memory-bank\" -ItemType Directory\r\n\r\n$timestamp = Get-Date -Format \"yyyy-MM-dd HH:mm:ss\"\r\n\r\n# Create productContext.md\r\n$productContextContent = @\"\r\n# Product Context\r\n\r\n## Project Overview\r\n[Brief description of $ProjectName]\r\n\r\n## Goals\r\n- [Primary goal]\r\n- [Secondary goal]\r\n\r\n## Features\r\n- [Core feature 1]\r\n- [Core feature 2]\r\n\r\n## Architecture\r\n[Initial architecture decisions]\r\n\"@\r\nSet-Content -Path \"memory-bank/productContext.md\" -Value $productContextContent\r\n\r\n# Create activeContext.md\r\n$activeContextContent = @\"\r\n# Active Context\r\n\r\n## Current Focus\r\nInitial project setup and planning\r\n\r\n## Recent Changes\r\nProject initialization\r\n\r\n## Open Questions/Issues\r\n- [Initial question/issue 1]\r\n- [Initial question/issue 2]\r\n\"@\r\nSet-Content -Path \"memory-bank/activeContext.md\" -Value $activeContextContent\r\n\r\n# Create systemPatterns.md\r\n$systemPatternsContent = @\"\r\n# System Patterns\r\n\r\n## Design Patterns\r\n[Initial design patterns]\r\n\r\n## Architectural Patterns\r\n[Initial architectural patterns]\r\n\r\n## Coding Standards\r\n[Project-specific coding standards]\r\n\"@\r\nSet-Content -Path \"memory-bank/systemPatterns.md\" -Value $systemPatternsContent\r\n\r\n# Create decisionLog.md\r\n$decisionLogContent = @\"\r\n# Decision Log\r\n\r\n[$timestamp] - Project initialized with RooFlow memory bank\r\n\"@\r\nSet-Content -Path \"memory-bank/decisionLog.md\" -Value $decisionLogContent\r\n\r\n# Create progress.md\r\n$progressContent = @\"\r\n# Progress\r\n\r\n[$timestamp] - Project setup with RooFlow memory bank\r\n\"@\r\nSet-Content -Path \"memory-bank/progress.md\" -Value $progressContent\r\n\r\nWrite-Host \"RooFlow project '$ProjectName' has been set up successfully!\"\r\nWrite-Host \"Open the project in VS Code and start using Roo with memory bank functionality.\"\r\n"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Save this script as "
+        },
+        {
+          "type": "text",
+          "text": "setup-rooflow-project.ps1",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": " and run it with:"
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": ".\\setup-rooflow-project.ps1 -ProjectName \"your-new-project\"\n"
+        }
+      ]
+    }
+  ]
+}

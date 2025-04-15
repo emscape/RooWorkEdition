@@ -242,6 +242,16 @@ RooFlow memory bank initialized on $timestamp
                     description = "Provides web search capabilities via Brave Search API."
                     apiKeyEnvVar = "BRAVE_SEARCH_API_KEY" # Placeholder - User must set this environment variable
                 }
+                confluence = @{
+                    enabled = $false
+                    description = "Provides integration with Atlassian Confluence."
+                    allowedTools = @(
+                        "convertMarkdownToAdf",
+                        "uploadToConfluence",
+                        "getConfluencePage",
+                        "searchConfluence"
+                    )
+                }
             }
         } | ConvertTo-Json -Depth 5
         Set-Content -Path $mcpConfigPath -Value $defaultMcpConfig -Encoding UTF8

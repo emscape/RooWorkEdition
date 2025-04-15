@@ -11,10 +11,20 @@ $ProjectPath = Get-Location
 try {
     Write-Host "Applying RooFlow custom modes to the current project" -ForegroundColor Green
 
-    # Step 1: Create .roomodes file if it doesn't exist
+    # Step 1: Check for .roomodes file
     if (-not (Test-Path -Path ".roomodes")) {
-        Write-Host "Creating .roomodes file..." -ForegroundColor Yellow
-        $roomodesContent = @'
+        # Check if there's a .roomodes file in the package directory
+        $packageDir = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
+        $packageRoomodesPath = Join-Path -Path $packageDir -ChildPath ".roomodes"
+        
+        if (Test-Path -Path $packageRoomodesPath) {
+            Write-Host "Copying .roomodes file from package..." -ForegroundColor Yellow
+            Copy-Item -Path $packageRoomodesPath -Destination ".roomodes" -Force
+            Write-Host "Copied .roomodes file from package" -ForegroundColor Green
+        } else {
+            # Create a default .roomodes file if one wasn't found in the package
+            Write-Host "Creating default .roomodes file..." -ForegroundColor Yellow
+            $roomodesContent = @'
 {
   "customModes": [
     {
@@ -34,8 +44,9 @@ try {
   ]
 }
 '@
-        Set-Content -Path ".roomodes" -Value $roomodesContent
-        Write-Host "Created .roomodes file" -ForegroundColor Green
+            Set-Content -Path ".roomodes" -Value $roomodesContent
+            Write-Host "Created default .roomodes file" -ForegroundColor Green
+        }
     } else {
         Write-Host ".roomodes file already exists" -ForegroundColor Yellow
     }

@@ -279,6 +279,16 @@ Project initialization on $timestamp
                 description = "Provides web search capabilities via Brave Search API."
                 apiKeyEnvVar = "BRAVE_SEARCH_API_KEY" # Placeholder - User must set this environment variable
             }
+            confluence = @{
+                enabled = $false
+                description = "Provides integration with Atlassian Confluence."
+                allowedTools = @(
+                    "convertMarkdownToAdf",
+                    "uploadToConfluence",
+                    "getConfluencePage",
+                    "searchConfluence"
+                )
+            }
         }
     } | ConvertTo-Json -Depth 5
     Set-Content -Path $mcpConfigPath -Value $defaultMcpConfig -Encoding UTF8
@@ -330,8 +340,9 @@ Project initialization on $timestamp
     # Copy ADF tools to project
     Write-Host "Copying ADF tools to project..." -ForegroundColor Cyan
     
-    # Get the path to the repository root (where the script is located)
-    $repoRoot = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
+    # Get the path to the package's tools directory (relative to this script)
+    $packageToolsDir = Join-Path -Path (Split-Path -Parent $PSCommandPath) -ChildPath "../tools/adf"
+    $packageToolsDir = Resolve-Path -Path $packageToolsDir # Ensure it's an absolute path
     
     $toolFiles = @(
         "adf-viewer.html",
@@ -342,12 +353,19 @@ Project initialization on $timestamp
     )
     
     foreach ($file in $toolFiles) {
-        $sourcePath = Join-Path -Path $repoRoot -ChildPath $file
+        $sourcePath = Join-Path -Path $packageToolsDir -ChildPath $file
+        $destPath = Join-Path -Path $toolsDir -ChildPath $file
+        
         if (Test-Path $sourcePath) {
-            Copy-Item -Path $sourcePath -Destination "$toolsDir/" -Force
-            Write-Host "Copied $file to $toolsDir/" -ForegroundColor Green
+            # Check if source and destination are different files
+            if ((Resolve-Path $sourcePath).Path -ne (Resolve-Path $destPath -ErrorAction SilentlyContinue).Path) {
+                Copy-Item -Path $sourcePath -Destination "$toolsDir/" -Force
+                Write-Host "Copied $file to $toolsDir/" -ForegroundColor Green
+            } else {
+                Write-Host "Skipping $file as source and destination are the same file" -ForegroundColor Yellow
+            }
         } else {
-            Write-Host "Warning: $file not found in repository root" -ForegroundColor Yellow
+            Write-Host "Warning: $file not found in package tools directory" -ForegroundColor Yellow
         }
     }
     

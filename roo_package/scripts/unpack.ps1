@@ -51,6 +51,15 @@ try {
     Copy-Item -Path "$configDir\*" -Destination $targetConfigDir -Recurse -Force
     Write-Host "Copied config directory" -ForegroundColor Green
     
+    # Copy .roomodes file if it exists in the package
+    $roomodesPath = Join-Path -Path $packageDir -ChildPath ".roomodes"
+    if (Test-Path -Path $roomodesPath) {
+        Copy-Item -Path $roomodesPath -Destination (Join-Path -Path $currentDir -ChildPath ".roomodes") -Force
+        Write-Host "Copied .roomodes file" -ForegroundColor Green
+    } else {
+        Write-Host "No .roomodes file found in package" -ForegroundColor Yellow
+    }
+    
     Write-Host "RooFlow package unpacked successfully!" -ForegroundColor Green
     
     # Run the setup script
@@ -63,6 +72,22 @@ try {
     } else {
         & $setupScript
     }
+    
+    # Initialize the Roo Memory System
+    Write-Host "Initializing Roo Memory System..." -ForegroundColor Cyan
+    $memorySystemScript = Join-Path -Path $currentDir -ChildPath "scripts\Initialize-RooMemorySystem.ps1"
+    & $memorySystemScript -ProjectPath $currentDir
+
+    # Set up ADF Documentation Workflow
+    Write-Host "Setting up ADF Documentation Workflow..." -ForegroundColor Cyan
+    $adfWorkflowScript = Join-Path -Path $currentDir -ChildPath "scripts\setup-adf-workflow.ps1"
+    & $adfWorkflowScript
+
+    # Suggest configuring MCP servers
+    Write-Host "`nNext steps:" -ForegroundColor Cyan
+    Write-Host "1. Configure MCP servers (optional): .\scripts\Configure-McpServers.ps1" -ForegroundColor Cyan
+    Write-Host "2. Start a new Roo Code task in Architect mode" -ForegroundColor Cyan
+    Write-Host "3. Roo will detect the memory bank and activate it" -ForegroundColor Cyan
     
 } catch {
     Write-Error "An error occurred while unpacking the RooFlow package: $_"

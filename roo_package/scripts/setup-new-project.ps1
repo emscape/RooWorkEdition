@@ -39,9 +39,14 @@ try {
     git init | Out-Null
     Write-Host "Git repository initialized" -ForegroundColor Green
 
-    # Step 2: Create .roomodes file
-    Write-Host "Creating .roomodes file..." -ForegroundColor Yellow
-    $roomodesContent = @'
+    # Step 2: Check for .roomodes file
+    Write-Host "Checking for .roomodes file..." -ForegroundColor Yellow
+    if (Test-Path -Path ".roomodes") {
+        Write-Host "Using existing .roomodes file" -ForegroundColor Green
+    } else {
+        # Create a default .roomodes file if one wasn't copied during unpacking
+        Write-Host "Creating default .roomodes file..." -ForegroundColor Yellow
+        $roomodesContent = @'
 {
   "customModes": [
     {
@@ -61,8 +66,9 @@ try {
   ]
 }
 '@
-    Set-Content -Path ".roomodes" -Value $roomodesContent
-    Write-Host "Created .roomodes file" -ForegroundColor Green
+        Set-Content -Path ".roomodes" -Value $roomodesContent
+        Write-Host "Created default .roomodes file" -ForegroundColor Green
+    }
 
     # Step 3: Create .rooignore file
     Write-Host "Creating .rooignore file..." -ForegroundColor Yellow
