@@ -25,6 +25,12 @@ RooFlow is an integrated toolkit that enhances your development workflow with cu
    path\to\roo_package\scripts\unpack.ps1 -ProjectName "CustomProjectName"
    ```
 
+3. **Using Roo**: If you're using Roo, you can simply tell it in Code mode:
+   ```
+   Roo, unpack yourself
+   ```
+   Roo will automatically handle the unpacking process for you.
+
 ### For Existing Projects
 
 1. **Copy the Package**: Copy the `roo_package` directory to your project
