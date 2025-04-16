@@ -12,6 +12,18 @@ This document provides a comprehensive guide for integrating the Atlassian Docum
 * View and validate ADF documents before publishing
 * Upload ADF content to Confluence using the MCP server
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Step-by-Step Integration Guide](#step-by-step-integration-guide)
+  - [Step One: Set Up ADF Tools](#step-one-set-up-adf-tools)
+  - [Step Two: Create Conversion Script](#step-two-create-conversion-script)
+  - [Step Three: Convert Documentation](#step-three-convert-documentation)
+  - [Step Four: View ADF Documents](#step-four-view-adf-documents)
+  - [Step Five: Configure Confluence Integration](#step-five-configure-confluence-integration-optional)
+- [Troubleshooting/FAQs](#troubleshootingfaqs)
+- [Additional Resources](#additional-resources)
+
 ## Prerequisites
 * Node.js installed and available in the system's PATH
 * Access to the RooFlow project repository

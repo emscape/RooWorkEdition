@@ -11,6 +11,24 @@ This guide provides instructions on how to write documentation following the HIT
 * Know how to convert existing documentation to follow the template
 * Be able to create new documentation that adheres to the style guide
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Understanding the HIT Documentation Template](#understanding-the-hit-documentation-template)
+  - [Template Structure](#template-structure)
+  - [Heading Hierarchy](#heading-hierarchy)
+- [Writing Guidelines](#writing-guidelines)
+  - [General Principles](#general-principles)
+  - [Formatting Best Practices](#formatting-best-practices)
+- [Converting Existing Documentation](#converting-existing-documentation)
+  - [Step One: Analyze Current Structure](#step-one-analyze-current-structure)
+  - [Step Two: Reorganize Content](#step-two-reorganize-content)
+  - [Step Three: Review and Refine](#step-three-review-and-refine)
+- [Example Conversion](#example-conversion)
+  - [Before (Original Format)](#before-original-format)
+  - [After (HIT Template Format)](#after-hit-template-format)
+- [Conclusion](#conclusion)
+
 ## Prerequisites
 * Basic knowledge of Markdown syntax
 * Access to the project repository

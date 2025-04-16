@@ -1,8 +1,33 @@
 # HIT Documentation Template Integration
 
-## Overview
+## Introduction
+
+### Overview
 
 This project incorporates the HIT (Human Interface Technology) documentation template style to ensure consistent, high-quality documentation across all project files. The HIT template provides a structured approach to documentation that makes it easier for readers to find information and understand complex topics.
+
+### Learning Objectives/Expected Outcomes
+* Understand the purpose and structure of the HIT documentation template
+* Learn how to create new documentation following the HIT template style
+* Be able to convert existing documentation to follow the HIT template
+* Master the validation and conversion process for HIT-compliant documents
+* Implement best practices for consistent documentation across projects
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Key Components](#key-components)
+- [Using the HIT Template](#using-the-hit-template)
+- [Validation and Conversion Process](#validation-and-conversion-process)
+- [Benefits of the HIT Template](#benefits-of-the-hit-template)
+- [Additional Resources](#additional-resources)
+
+## Prerequisites
+* Basic understanding of Markdown formatting
+* Access to the project repository containing the HIT template files
+* PowerShell for running the validation and conversion scripts
+* Familiarity with documentation best practices
+* Node.js installed (for ADF conversion functionality)
 
 ## Key Components
 

@@ -1,6 +1,33 @@
 # Applying RooFlow Custom Modes to Future Projects
 
-This guide explains how to set up new projects with RooFlow custom modes and memory bank functionality from the beginning.
+## Introduction
+
+### Overview
+This comprehensive guide provides detailed instructions for incorporating RooFlow custom modes and memory bank functionality into new software projects from inception. By integrating these capabilities at the start of a project, you establish a foundation for enhanced context retention, specialized mode behaviors, and structured collaboration throughout the development lifecycle. This proactive approach ensures optimal utilization of Roo's capabilities from day one.
+
+### Learning Objectives/Expected Outcomes
+* Understand how to set up a new project with RooFlow custom modes from the beginning
+* Learn to create and initialize a properly structured memory bank for new projects
+* Master the process of configuring project-specific Roo modes
+* Be able to implement an effective development workflow using the memory bank
+* Use the provided template script to automate the setup process for future projects
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Step 1: Project Setup with Memory Bank](#step-1-project-setup-with-memory-bank)
+- [Step 2: Initialize Memory Bank Structure](#step-2-initialize-memory-bank-structure)
+- [Step 3: Project Kickoff with Roo](#step-3-project-kickoff-with-roo)
+- [Step 4: Development Workflow](#step-4-development-workflow)
+- [Template Script](#template-script)
+
+## Prerequisites
+* PowerShell installed on your system
+* Visual Studio Code installed
+* Roo Code extension installed and configured
+* Git (optional but recommended for version control)
+* Basic understanding of JSON configuration files
+* Familiarity with Markdown formatting
 
 ## Step 1: Project Setup with Memory Bank
 

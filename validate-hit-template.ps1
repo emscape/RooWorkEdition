@@ -136,7 +136,7 @@ function Validate-HitTemplate {
 
 # Get all Markdown files in the docs directory (excluding the template and style guide)
 $markdownFiles = Get-ChildItem -Path $docsDir -Filter "*.md" -Recurse | 
-                 Where-Object { $_.FullName -ne $templateFile -and $_.FullName -ne $styleGuideFile }
+                 Where-Object { $_.FullName -ne $templateFile -and $_.FullName -ne $styleGuideFile -and $_.FullName -notlike "*\excluded\*" }
 
 # Validate each Markdown file
 $validCount = 0

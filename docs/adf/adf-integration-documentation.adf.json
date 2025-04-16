@@ -22,6 +22,18 @@
       "content": [
         {
           "type": "text",
+          "text": "Introduction"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
           "text": "Overview"
         }
       ]
@@ -32,6 +44,242 @@
         {
           "type": "text",
           "text": "This document describes the integration of the ADF (Atlassian Document Format) workflow and memory system into the RooFlow project setup scripts. The integration consolidates functionality from multiple scripts into the main setup scripts, making it easier to set up new projects and apply the configuration to existing projects."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Learning Objectives/Expected Outcomes"
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Understand how the ADF workflow is integrated into the project setup scripts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Learn how the memory system is incorporated into the project initialization process"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Identify the key integration points between different components"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Be able to use the ADF conversion functionality to convert Markdown to ADF format"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Know how to view and upload ADF files to Confluence"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Table of Contents"
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Introduction",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#introduction"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Integration Components",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#integration-components"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Key Integration Points",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#key-integration-points"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Using the ADF Conversion Functionality",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#using-the-adf-conversion-functionality"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Testing the Integration",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#testing-the-integration"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Conclusion",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#conclusion"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },

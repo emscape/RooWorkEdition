@@ -10,7 +10,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Applying RooFlow Custom Modes to Future Projects"
+          "text": "HIT Documentation Template Integration"
         }
       ]
     },
@@ -43,7 +43,7 @@
       "content": [
         {
           "type": "text",
-          "text": "This comprehensive guide provides detailed instructions for incorporating RooFlow custom modes and memory bank functionality into new software projects from inception. By integrating these capabilities at the start of a project, you establish a foundation for enhanced context retention, specialized mode behaviors, and structured collaboration throughout the development lifecycle. This proactive approach ensures optimal utilization of Roo's capabilities from day one."
+          "text": "This project incorporates the HIT (Human Interface Technology) documentation template style to ensure consistent, high-quality documentation across all project files. The HIT template provides a structured approach to documentation that makes it easier for readers to find information and understand complex topics."
         }
       ]
     },
@@ -70,7 +70,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Understand how to set up a new project with RooFlow custom modes from the beginning"
+                  "text": "Understand the purpose and structure of the HIT documentation template"
                 }
               ]
             }
@@ -84,7 +84,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Learn to create and initialize a properly structured memory bank for new projects"
+                  "text": "Learn how to create new documentation following the HIT template style"
                 }
               ]
             }
@@ -98,7 +98,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Master the process of configuring project-specific Roo modes"
+                  "text": "Be able to convert existing documentation to follow the HIT template"
                 }
               ]
             }
@@ -112,7 +112,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Be able to implement an effective development workflow using the memory bank"
+                  "text": "Master the validation and conversion process for HIT-compliant documents"
                 }
               ]
             }
@@ -126,7 +126,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Use the provided template script to automate the setup process for future projects"
+                  "text": "Implement best practices for consistent documentation across projects"
                 }
               ]
             }
@@ -201,12 +201,12 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Step 1: Project Setup with Memory Bank",
+                  "text": "Key Components",
                   "marks": [
                     {
                       "type": "link",
                       "attrs": {
-                        "href": "#step-1-project-setup-with-memory-bank"
+                        "href": "#key-components"
                       }
                     }
                   ]
@@ -223,12 +223,12 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Step 2: Initialize Memory Bank Structure",
+                  "text": "Using the HIT Template",
                   "marks": [
                     {
                       "type": "link",
                       "attrs": {
-                        "href": "#step-2-initialize-memory-bank-structure"
+                        "href": "#using-the-hit-template"
                       }
                     }
                   ]
@@ -245,12 +245,12 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Step 3: Project Kickoff with Roo",
+                  "text": "Validation and Conversion Process",
                   "marks": [
                     {
                       "type": "link",
                       "attrs": {
-                        "href": "#step-3-project-kickoff-with-roo"
+                        "href": "#validation-and-conversion-process"
                       }
                     }
                   ]
@@ -267,12 +267,12 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Step 4: Development Workflow",
+                  "text": "Benefits of the HIT Template",
                   "marks": [
                     {
                       "type": "link",
                       "attrs": {
-                        "href": "#step-4-development-workflow"
+                        "href": "#benefits-of-the-hit-template"
                       }
                     }
                   ]
@@ -289,12 +289,12 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Template Script",
+                  "text": "Additional Resources",
                   "marks": [
                     {
                       "type": "link",
                       "attrs": {
-                        "href": "#template-script"
+                        "href": "#additional-resources"
                       }
                     }
                   ]
@@ -328,7 +328,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "PowerShell installed on your system"
+                  "text": "Basic understanding of Markdown formatting"
                 }
               ]
             }
@@ -342,7 +342,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Visual Studio Code installed"
+                  "text": "Access to the project repository containing the HIT template files"
                 }
               ]
             }
@@ -356,7 +356,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Roo Code extension installed and configured"
+                  "text": "PowerShell for running the validation and conversion scripts"
                 }
               ]
             }
@@ -370,7 +370,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Git (optional but recommended for version control)"
+                  "text": "Familiarity with documentation best practices"
                 }
               ]
             }
@@ -384,21 +384,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Basic understanding of JSON configuration files"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Familiarity with Markdown formatting"
+                  "text": "Node.js installed (for ADF conversion functionality)"
                 }
               ]
             }
@@ -414,7 +400,7 @@
       "content": [
         {
           "type": "text",
-          "text": "Step 1: Project Setup with Memory Bank"
+          "text": "Key Components"
         }
       ]
     },
@@ -423,7 +409,7 @@
       "content": [
         {
           "type": "text",
-          "text": "When starting a new project, follow these steps to incorporate RooFlow's memory bank functionality:"
+          "text": "The HIT documentation template integration consists of the following components:"
         }
       ]
     },
@@ -438,73 +424,20 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Create your new project directory:"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "powershell"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "mkdir your-new-project\r\ncd your-new-project\r\n"
-        }
-      ]
-    },
-    {
-      "type": "orderedList",
-      "content": [
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Initialize your version control system (if using Git):"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "powershell"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "git init\r\n"
-        }
-      ]
-    },
-    {
-      "type": "orderedList",
-      "content": [
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Create a "
+                  "text": "Template File",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
                 },
                 {
                   "type": "text",
-                  "text": ".roomodes",
+                  "text": ": "
+                },
+                {
+                  "type": "text",
+                  "text": "docs/documentation-template.md",
                   "marks": [
                     {
                       "type": "code"
@@ -513,23 +446,11 @@
                 },
                 {
                   "type": "text",
-                  "text": " file in the project root:"
+                  "text": " - A template file that shows the structure and format of a document following the HIT style."
                 }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "powershell"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "New-Item -Path \".roomodes\" -ItemType File\r\n"
         }
       ]
     },
@@ -544,11 +465,20 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Add the following content to the "
+                  "text": "Style Guide",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
                 },
                 {
                   "type": "text",
-                  "text": ".roomodes",
+                  "text": ": "
+                },
+                {
+                  "type": "text",
+                  "text": "docs/documentation-style-guide.md",
                   "marks": [
                     {
                       "type": "code"
@@ -557,23 +487,11 @@
                 },
                 {
                   "type": "text",
-                  "text": " file:"
+                  "text": " - A comprehensive guide that explains how to write documentation following the HIT template style."
                 }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "json"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "{\r\n  \"customModes\": [\r\n    {\r\n      \"slug\": \"test\",\r\n      \"name\": \"Test\",\r\n      \"roleDefinition\": \"You are Roo's Test mode for this specific project\",\r\n      \"groups\": [\r\n        \"read\",\r\n        \"browser\",\r\n        \"command\",\r\n        \"edit\",\r\n        \"mcp\"\r\n      ],\r\n      \"source\": \"project\",\r\n      \"customInstructions\": \"Always check to make sure memory bank is active. Explicitly prompt Emily when she needs to do a manual action. terminal commands must be PowerShell. Explicitly prompt Emily when she needs to do a manual action. Save to memory and prompt user to start a new task when token cost nears $0.5\"\r\n    }\r\n  ]\r\n}\r\n"
         }
       ]
     },
@@ -588,11 +506,20 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Create a "
+                  "text": "Sample Document",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
                 },
                 {
                   "type": "text",
-                  "text": ".rooignore",
+                  "text": ": "
+                },
+                {
+                  "type": "text",
+                  "text": "docs/sample-hit-documentation.md",
                   "marks": [
                     {
                       "type": "code"
@@ -601,23 +528,11 @@
                 },
                 {
                   "type": "text",
-                  "text": " file to exclude unnecessary files from Roo's context:"
+                  "text": " - An example document that demonstrates the HIT template style in action."
                 }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "powershell"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "New-Item -Path \".rooignore\" -ItemType File\r\n"
         }
       ]
     },
@@ -632,7 +547,29 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Add common patterns to ignore:"
+                  "text": "Validation Script",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": "
+                },
+                {
+                  "type": "text",
+                  "text": "validate-hit-template.ps1",
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " - A PowerShell script that validates if Markdown files follow the HIT template style."
                 }
               ]
             }
@@ -641,14 +578,43 @@
       ]
     },
     {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "plain"
-      },
+      "type": "orderedList",
       "content": [
         {
-          "type": "text",
-          "text": "node_modules/\r\ndist/\r\nbuild/\r\n.git/\r\n*.log\r\n"
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Enhanced Conversion Script",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": "
+                },
+                {
+                  "type": "text",
+                  "text": "convert-docs.ps1",
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": " - An updated script that validates Markdown files against the HIT template style before converting them to ADF format."
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -660,7 +626,28 @@
       "content": [
         {
           "type": "text",
-          "text": "Step 2: Initialize Memory Bank Structure"
+          "text": "Using the HIT Template"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Creating New Documentation"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "When creating new documentation:"
         }
       ]
     },
@@ -675,189 +662,20 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Create the memory bank directory and required files:"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "powershell"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "mkdir memory-bank\r\nNew-Item -Path \"memory-bank/productContext.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/activeContext.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/systemPatterns.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/decisionLog.md\" -ItemType File\r\nNew-Item -Path \"memory-bank/progress.md\" -ItemType File\r\n"
-        }
-      ]
-    },
-    {
-      "type": "orderedList",
-      "content": [
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
+                  "text": "Start with the template file ("
+                },
                 {
                   "type": "text",
-                  "text": "Initialize the memory bank files with project-specific content:"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "productContext.md Template"
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "markdown"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "# Product Context\r\n\r\n## Project Overview\r\n[Brief description of your new project]\r\n\r\n## Goals\r\n- [Primary goal]\r\n- [Secondary goal]\r\n\r\n## Features\r\n- [Core feature 1]\r\n- [Core feature 2]\r\n\r\n## Architecture\r\n[Initial architecture decisions]\r\n"
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "activeContext.md Template"
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "markdown"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "# Active Context\r\n\r\n## Current Focus\r\nInitial project setup and planning\r\n\r\n## Recent Changes\r\nProject initialization\r\n\r\n## Open Questions/Issues\r\n- [Initial question/issue 1]\r\n- [Initial question/issue 2]\r\n"
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "systemPatterns.md Template"
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "markdown"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "# System Patterns\r\n\r\n## Design Patterns\r\n[Initial design patterns]\r\n\r\n## Architectural Patterns\r\n[Initial architectural patterns]\r\n\r\n## Coding Standards\r\n[Project-specific coding standards]\r\n"
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "decisionLog.md Template"
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "markdown"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "# Decision Log\r\n\r\n[YYYY-MM-DD HH:MM:SS] - Project initialized with RooFlow memory bank\r\n"
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 3
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "progress.md Template"
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "markdown"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "# Progress\r\n\r\n[YYYY-MM-DD HH:MM:SS] - Project setup with RooFlow memory bank\r\n"
-        }
-      ]
-    },
-    {
-      "type": "heading",
-      "attrs": {
-        "level": 2
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "Step 3: Project Kickoff with Roo"
-        }
-      ]
-    },
-    {
-      "type": "orderedList",
-      "content": [
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
+                  "text": "docs/documentation-template.md",
+                  "marks": [
+                    {
+                      "type": "code"
+                    }
+                  ]
+                },
                 {
                   "type": "text",
-                  "text": "Open your project in VS Code"
+                  "text": ") as a base"
                 }
               ]
             }
@@ -871,7 +689,117 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Start a new Roo Code task in Architect mode:"
+                  "text": "Follow the structure and formatting guidelines in the style guide"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Use the sample document as a reference for how to apply the template"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Run the validation script to ensure your document follows the HIT template style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Convert to ADF format using the conversion script"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Converting Existing Documentation"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "To convert existing documentation to follow the HIT template style:"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Review the style guide to understand the HIT template structure"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Use the sample document as a reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Reorganize your content to follow the template structure:"
                 }
               ]
             }
@@ -890,7 +818,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Click on the Roo Code icon"
+                  "text": "Add an Introduction section with Overview and Learning Objectives"
                 }
               ]
             }
@@ -904,7 +832,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Select \"Architect\" from the mode dropdown"
+                  "text": "Format the main content as step-by-step instructions"
                 }
               ]
             }
@@ -918,7 +846,21 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Roo will detect the memory bank and activate it"
+                  "text": "Add a Troubleshooting/FAQs section"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Use consistent heading levels (h1 for title, h2 for major sections, h3 for steps, h4 for sub-steps)"
                 }
               ]
             }
@@ -937,26 +879,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Begin with a project planning session:"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "bulletList",
-      "content": [
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Define the project scope"
+                  "text": "Run the validation script to check if your document follows the template"
                 }
               ]
             }
@@ -970,40 +893,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Outline the architecture"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Plan initial development tasks"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "orderedList",
-      "content": [
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Use the \"Update Memory Bank\" or \"UMB\" command at key milestones to ensure all context is saved"
+                  "text": "Make any necessary adjustments based on the validation results"
                 }
               ]
             }
@@ -1019,7 +909,16 @@
       "content": [
         {
           "type": "text",
-          "text": "Step 4: Development Workflow"
+          "text": "Validation and Conversion Process"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The enhanced workflow includes validation against the HIT template style:"
         }
       ]
     },
@@ -1034,11 +933,82 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Use different Roo modes based on your current task:"
+                  "text": "Run the validation script to check if your Markdown files follow the HIT template style:"
                 }
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "   .\\validate-hit-template.ps1\r\n"
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Review the validation results and update any non-compliant files"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orderedList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Run the conversion script to convert Markdown files to ADF format:"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "   .\\convert-docs.ps1\r\n"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The conversion script will:"
         }
       ]
     },
@@ -1053,7 +1023,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Architect mode for planning and design"
+                  "text": "Validate files against the HIT template style"
                 }
               ]
             }
@@ -1067,7 +1037,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Code mode for implementation"
+                  "text": "Ask if you want to continue with conversion even if some files don't follow the template"
                 }
               ]
             }
@@ -1081,7 +1051,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Debug mode for troubleshooting"
+                  "text": "Convert Markdown files to ADF format"
                 }
               ]
             }
@@ -1095,21 +1065,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Ask mode for questions and information"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Test mode for testing strategies"
+                  "text": "Provide a reminder about any non-compliant files"
                 }
               ]
             }
@@ -1128,11 +1084,44 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Regularly update the memory bank to maintain project context"
+                  "text": "View the converted ADF files using the ADF viewer:"
                 }
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": {
+        "language": "powershell"
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "   Start-Process \".\\tools\\adf\\adf-viewer.html\"\r\n"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Benefits of the HIT Template"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Using the HIT documentation template provides several benefits:"
         }
       ]
     },
@@ -1147,7 +1136,108 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "For collaborative projects, ensure all team members have access to the memory bank files (e.g., through version control)"
+                  "text": "Consistency",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": All documentation follows the same structure and format"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Clarity",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": Information is organized in a logical, easy-to-follow manner"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Completeness",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": The template ensures all necessary information is included"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Usability",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": Readers can quickly find the information they need"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Maintainability",
+                  "marks": [
+                    {
+                      "type": "strong"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": ": Documentation is easier to update and maintain"
                 }
               ]
             }
@@ -1163,62 +1253,100 @@
       "content": [
         {
           "type": "text",
-          "text": "Template Script"
+          "text": "Additional Resources"
         }
       ]
     },
     {
-      "type": "paragraph",
+      "type": "bulletList",
       "content": [
         {
-          "type": "text",
-          "text": "You can use this PowerShell script to quickly set up a new project with RooFlow memory bank:"
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "powershell"
-      },
-      "content": [
-        {
-          "type": "text",
-          "text": "# RooFlow Project Setup Script\r\nparam(\r\n    [Parameter(Mandatory=$true)]\r\n    [string]$ProjectName\r\n)\r\n\r\n# Create project directory\r\nNew-Item -Path $ProjectName -ItemType Directory\r\nSet-Location $ProjectName\r\n\r\n# Initialize Git\r\ngit init\r\n\r\n# Create .roomodes file\r\n$roomodesContent = @'\r\n{\r\n  \"customModes\": [\r\n    {\r\n      \"slug\": \"test\",\r\n      \"name\": \"Test\",\r\n      \"roleDefinition\": \"You are Roo's Test mode for this specific project\",\r\n      \"groups\": [\r\n        \"read\",\r\n        \"browser\",\r\n        \"command\",\r\n        \"edit\",\r\n        \"mcp\"\r\n      ],\r\n      \"source\": \"project\",\r\n      \"customInstructions\": \"Always check to make sure memory bank is active. Explicitly prompt Emily when she needs to do a manual action. terminal commands must be PowerShell. Explicitly prompt Emily when she needs to do a manual action. Save to memory and prompt user to start a new task when token cost nears $0.5\"\r\n    }\r\n  ]\r\n}\r\n'@\r\nSet-Content -Path \".roomodes\" -Value $roomodesContent\r\n\r\n# Create .rooignore file\r\n$rooignoreContent = @'\r\nnode_modules/\r\ndist/\r\nbuild/\r\n.git/\r\n*.log\r\n'@\r\nSet-Content -Path \".rooignore\" -Value $rooignoreContent\r\n\r\n# Create memory bank directory and files\r\nNew-Item -Path \"memory-bank\" -ItemType Directory\r\n\r\n$timestamp = Get-Date -Format \"yyyy-MM-dd HH:mm:ss\"\r\n\r\n# Create productContext.md\r\n$productContextContent = @\"\r\n# Product Context\r\n\r\n## Project Overview\r\n[Brief description of $ProjectName]\r\n\r\n## Goals\r\n- [Primary goal]\r\n- [Secondary goal]\r\n\r\n## Features\r\n- [Core feature 1]\r\n- [Core feature 2]\r\n\r\n## Architecture\r\n[Initial architecture decisions]\r\n\"@\r\nSet-Content -Path \"memory-bank/productContext.md\" -Value $productContextContent\r\n\r\n# Create activeContext.md\r\n$activeContextContent = @\"\r\n# Active Context\r\n\r\n## Current Focus\r\nInitial project setup and planning\r\n\r\n## Recent Changes\r\nProject initialization\r\n\r\n## Open Questions/Issues\r\n- [Initial question/issue 1]\r\n- [Initial question/issue 2]\r\n\"@\r\nSet-Content -Path \"memory-bank/activeContext.md\" -Value $activeContextContent\r\n\r\n# Create systemPatterns.md\r\n$systemPatternsContent = @\"\r\n# System Patterns\r\n\r\n## Design Patterns\r\n[Initial design patterns]\r\n\r\n## Architectural Patterns\r\n[Initial architectural patterns]\r\n\r\n## Coding Standards\r\n[Project-specific coding standards]\r\n\"@\r\nSet-Content -Path \"memory-bank/systemPatterns.md\" -Value $systemPatternsContent\r\n\r\n# Create decisionLog.md\r\n$decisionLogContent = @\"\r\n# Decision Log\r\n\r\n[$timestamp] - Project initialized with RooFlow memory bank\r\n\"@\r\nSet-Content -Path \"memory-bank/decisionLog.md\" -Value $decisionLogContent\r\n\r\n# Create progress.md\r\n$progressContent = @\"\r\n# Progress\r\n\r\n[$timestamp] - Project setup with RooFlow memory bank\r\n\"@\r\nSet-Content -Path \"memory-bank/progress.md\" -Value $progressContent\r\n\r\nWrite-Host \"RooFlow project '$ProjectName' has been set up successfully!\"\r\nWrite-Host \"Open the project in VS Code and start using Roo with memory bank functionality.\"\r\n"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "content": [
-        {
-          "type": "text",
-          "text": "Save this script as "
-        },
-        {
-          "type": "text",
-          "text": "setup-rooflow-project.ps1",
-          "marks": [
+          "type": "listItem",
+          "content": [
             {
-              "type": "code"
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "HIT Documentation Template",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "docs/documentation-template.md"
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
         {
-          "type": "text",
-          "text": " and run it with:"
-        }
-      ]
-    },
-    {
-      "type": "codeBlock",
-      "attrs": {
-        "language": "powershell"
-      },
-      "content": [
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Documentation Style Guide",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "docs/documentation-style-guide.md"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
-          "type": "text",
-          "text": ".\\setup-rooflow-project.ps1 -ProjectName \"your-new-project\"\n"
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Sample HIT Documentation",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "docs/sample-hit-documentation.md"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "ADF Integration Documentation",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "docs/adf-integration-documentation.md"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

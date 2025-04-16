@@ -15,11 +15,150 @@
       ]
     },
     {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Introduction"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Overview"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "content": [
         {
           "type": "text",
-          "text": "This document outlines a combined plan for implementing a memory bank optimization and archiving system that will help streamline Roo by selectively archiving items that are complete or no longer necessary for loading into context, ultimately saving token costs."
+          "text": "This document outlines a comprehensive plan for implementing a memory bank optimization and archiving system that will help streamline Roo by selectively archiving items that are complete or no longer necessary for loading into context, ultimately saving token costs. The system introduces a structured approach to memory management with tagging, archiving criteria, and retrieval mechanisms that work together to maintain an efficient memory footprint while preserving historical information."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 3
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Learning Objectives/Expected Outcomes"
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Understand the architecture and components of the memory bank optimization system"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Learn how the tagging system works to identify archivable content"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Master the file-specific archiving criteria for different memory bank files"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Be able to implement the archiving process during UMB operations"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Gain knowledge of the search and retrieval mechanisms for archived content"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Learn how to use the PowerShell integration scripts for new and existing projects"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Understand how the system reduces token costs through selective loading"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -31,7 +170,433 @@
       "content": [
         {
           "type": "text",
-          "text": "1. Overview"
+          "text": "Table of Contents"
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Introduction",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#introduction"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Prerequisites",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#prerequisites"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Architecture",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#architecture"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "File Structure",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#file-structure"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Tagging System",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#tagging-system"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "File-Specific Archiving Criteria",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#file-specific-archiving-criteria"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Archiving Process",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#archiving-process"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Memory Configuration File",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#memory-configuration-file-memory-configjson"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Memory Manager Commands",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#memory-manager-commands"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Memory Bank Loading Process",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#memory-bank-loading-process"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Search and Retrieval",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#search-and-retrieval"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "PowerShell Integration Scripts",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#powershell-integration-scripts"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Implementation Steps",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#implementation-steps"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Saving Token Cost",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "#saving-token-cost"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Prerequisites"
+        }
+      ]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Basic understanding of Roo's memory bank system"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "PowerShell 5.1 or later for running the integration scripts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Familiarity with Markdown formatting"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Access to the project repository"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Understanding of JSON configuration files"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Knowledge of the existing memory bank file structure and purpose"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "System Capabilities"
         }
       ]
     },
@@ -55,7 +620,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Tag items in memory bank files with status indicators."
+                  "text": "Tag items in memory bank files with status indicators"
                 }
               ]
             }
@@ -69,7 +634,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Use different criteria for each file type to determine archiving eligibility."
+                  "text": "Use different criteria for each file type to determine archiving eligibility"
                 }
               ]
             }
@@ -83,7 +648,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Automatically check for archivable items during UMB (Update Memory Bank) operations."
+                  "text": "Automatically check for archivable items during UMB (Update Memory Bank) operations"
                 }
               ]
             }
@@ -97,7 +662,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Suggest items for archiving but require user confirmation."
+                  "text": "Suggest items for archiving but require user confirmation"
                 }
               ]
             }
@@ -111,7 +676,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Move confirmed items to dedicated archive files."
+                  "text": "Move confirmed items to dedicated archive files"
                 }
               ]
             }
@@ -125,7 +690,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Provide search functionality to retrieve archived items when needed."
+                  "text": "Provide search functionality to retrieve archived items when needed"
                 }
               ]
             }
@@ -139,7 +704,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Implement relevance-based memory bank system."
+                  "text": "Implement relevance-based memory bank system"
                 }
               ]
             }
@@ -153,7 +718,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Implement selective loading of the most relevant information at the start of each task."
+                  "text": "Implement selective loading of the most relevant information at the start of each task"
                 }
               ]
             }
@@ -167,7 +732,7 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Implement cross-repository search across both active and archived content."
+                  "text": "Implement cross-repository search across both active and archived content"
                 }
               ]
             }
@@ -181,11 +746,23 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "Provide PowerShell scripts for easy integration into new and existing projects."
+                  "text": "Provide PowerShell scripts for easy integration into new and existing projects"
                 }
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": {
+        "level": 2
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Architecture"
         }
       ]
     },

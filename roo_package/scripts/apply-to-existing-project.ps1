@@ -495,6 +495,9 @@ This project uses a documentation-as-code approach with support for Atlassian Do
     Write-Host "6. Use 'Update Memory Bank' or 'UMB' command at key milestones" -ForegroundColor Cyan
     Write-Host "7. For ADF documentation conversion, ensure Node.js is installed and run: .\convert-docs.ps1" -ForegroundColor Cyan
 
+    # Prompt user to switch to Architect mode
+    Write-Host "`nRooFlow setup complete! Please switch to Architect mode and ask a question to initialize the memory bank." -ForegroundColor Green
+
 } catch {
     Write-Error "An error occurred: $_"
 }

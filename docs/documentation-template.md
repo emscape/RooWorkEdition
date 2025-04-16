@@ -17,6 +17,15 @@ Example:
 * Know how to view and upload ADF files to Confluence
 * Be able to troubleshoot common issues with the ADF workflow
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Step-by-Step Guide](#step-by-step-guide)
+  - [Step One: [Step Name]](#step-one-step-name)
+  - [Step Two: [Step Name]](#step-two-step-name)
+- [Troubleshooting/FAQs](#troubleshootingfaqs)
+- [Additional Resources](#additional-resources)
+
 ## Prerequisites
 List any prerequisites or requirements needed before proceeding with the steps in the document. Include links to other documentation pages where appropriate.
 

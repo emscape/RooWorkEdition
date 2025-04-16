@@ -1,8 +1,25 @@
 # ADF Integration Documentation
 
-## Overview
+## Introduction
+
+### Overview
 
 This document describes the integration of the ADF (Atlassian Document Format) workflow and memory system into the RooFlow project setup scripts. The integration consolidates functionality from multiple scripts into the main setup scripts, making it easier to set up new projects and apply the configuration to existing projects.
+
+### Learning Objectives/Expected Outcomes
+* Understand how the ADF workflow is integrated into the project setup scripts
+* Learn how the memory system is incorporated into the project initialization process
+* Identify the key integration points between different components
+* Be able to use the ADF conversion functionality to convert Markdown to ADF format
+* Know how to view and upload ADF files to Confluence
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Integration Components](#integration-components)
+- [Key Integration Points](#key-integration-points)
+- [Using the ADF Conversion Functionality](#using-the-adf-conversion-functionality)
+- [Testing the Integration](#testing-the-integration)
+- [Conclusion](#conclusion)
 
 ## Integration Components
 

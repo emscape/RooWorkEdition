@@ -1,0 +1,21 @@
+{
+  "name": "adf-confluence-server",
+  "version": "0.1.0",
+  "description": "MCP server for ADF conversion and Confluence integration",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && powershell -Command \"if (Test-Path build/index.js) { (Get-Item build/index.js).IsReadOnly = $false }\"",
+    "start": "node build/index.js",
+    "dev": "tsc && node build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.1.0",
+    "axios": "^1.6.2",
+    "marked": "^9.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2"
+  }
+}

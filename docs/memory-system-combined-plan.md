@@ -1,21 +1,62 @@
 # Memory Bank Optimization and Archiving System: Combined Plan
 
-This document outlines a combined plan for implementing a memory bank optimization and archiving system that will help streamline Roo by selectively archiving items that are complete or no longer necessary for loading into context, ultimately saving token costs.
+## Introduction
 
-## 1. Overview
+### Overview
+
+This document outlines a comprehensive plan for implementing a memory bank optimization and archiving system that will help streamline Roo by selectively archiving items that are complete or no longer necessary for loading into context, ultimately saving token costs. The system introduces a structured approach to memory management with tagging, archiving criteria, and retrieval mechanisms that work together to maintain an efficient memory footprint while preserving historical information.
+
+### Learning Objectives/Expected Outcomes
+
+* Understand the architecture and components of the memory bank optimization system
+* Learn how the tagging system works to identify archivable content
+* Master the file-specific archiving criteria for different memory bank files
+* Be able to implement the archiving process during UMB operations
+* Gain knowledge of the search and retrieval mechanisms for archived content
+* Learn how to use the PowerShell integration scripts for new and existing projects
+* Understand how the system reduces token costs through selective loading
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Architecture](#architecture)
+- [File Structure](#file-structure)
+- [Tagging System](#tagging-system)
+- [File-Specific Archiving Criteria](#file-specific-archiving-criteria)
+- [Archiving Process](#archiving-process)
+- [Memory Configuration File](#memory-configuration-file-memory-configjson)
+- [Memory Manager Commands](#memory-manager-commands)
+- [Memory Bank Loading Process](#memory-bank-loading-process)
+- [Search and Retrieval](#search-and-retrieval)
+- [PowerShell Integration Scripts](#powershell-integration-scripts)
+- [Implementation Steps](#implementation-steps)
+- [Saving Token Cost](#saving-token-cost)
+
+## Prerequisites
+
+* Basic understanding of Roo's memory bank system
+* PowerShell 5.1 or later for running the integration scripts
+* Familiarity with Markdown formatting
+* Access to the project repository
+* Understanding of JSON configuration files
+* Knowledge of the existing memory bank file structure and purpose
+
+## System Capabilities
 
 The system will:
 
-*   Tag items in memory bank files with status indicators.
-*   Use different criteria for each file type to determine archiving eligibility.
-*   Automatically check for archivable items during UMB (Update Memory Bank) operations.
-*   Suggest items for archiving but require user confirmation.
-*   Move confirmed items to dedicated archive files.
-*   Provide search functionality to retrieve archived items when needed.
-*   Implement relevance-based memory bank system.
-*   Implement selective loading of the most relevant information at the start of each task.
-*   Implement cross-repository search across both active and archived content.
-*   Provide PowerShell scripts for easy integration into new and existing projects.
+* Tag items in memory bank files with status indicators
+* Use different criteria for each file type to determine archiving eligibility
+* Automatically check for archivable items during UMB (Update Memory Bank) operations
+* Suggest items for archiving but require user confirmation
+* Move confirmed items to dedicated archive files
+* Provide search functionality to retrieve archived items when needed
+* Implement relevance-based memory bank system
+* Implement selective loading of the most relevant information at the start of each task
+* Implement cross-repository search across both active and archived content
+* Provide PowerShell scripts for easy integration into new and existing projects
+
+## Architecture
 
 ## 2. Architecture
 

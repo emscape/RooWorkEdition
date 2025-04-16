@@ -1,6 +1,31 @@
 # Applying RooFlow Custom Modes to Existing Projects
 
-This guide explains how to apply RooFlow custom modes and memory bank functionality to your existing projects.
+## Introduction
+
+### Overview
+This guide provides detailed instructions for integrating RooFlow custom modes and memory bank functionality into existing software projects. By following this step-by-step process, you'll enhance your project with persistent memory capabilities, specialized mode behaviors, and structured collaboration between different Roo modes. This integration enables more efficient development workflows and improved context retention across sessions.
+
+### Learning Objectives/Expected Outcomes
+* Understand how to create and configure project-specific custom modes
+* Learn to initialize and structure a memory bank for your existing project
+* Master the process of integrating RooFlow with your current development workflow
+* Be able to effectively use and update the memory bank during development
+* Implement best practices for memory persistence in your project
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Step 1: Create a Project-Specific .roomodes File](#step-1-create-a-project-specific-roomodes-file)
+- [Step 2: Initialize a Memory Bank](#step-2-initialize-a-memory-bank)
+- [Step 3: Use the Memory Bank with Roo Code](#step-3-use-the-memory-bank-with-roo-code)
+- [Step 4: Update the Memory Bank](#step-4-update-the-memory-bank)
+
+## Prerequisites
+* An existing software project with a defined directory structure
+* Visual Studio Code installed
+* Roo Code extension installed and configured
+* Basic understanding of JSON configuration files
+* PowerShell for running the necessary commands (Windows environment)
 
 ## Step 1: Create a Project-Specific .roomodes File
 

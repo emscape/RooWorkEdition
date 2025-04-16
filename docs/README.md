@@ -1,6 +1,33 @@
 # RooFlow Custom Modes and Memory Bank
 
-This directory contains documentation on how to apply RooFlow custom modes and memory bank functionality to your projects.
+## Introduction
+
+### Overview
+This documentation repository provides comprehensive guidance on implementing and utilizing RooFlow custom modes and memory bank functionality in your projects. RooFlow enhances Roo Code's capabilities by adding persistent memory storage, structured mode collaboration, and specialized behavior for different development tasks. This documentation serves as the central reference for understanding, implementing, and optimizing the RooFlow system.
+
+### Learning Objectives/Expected Outcomes
+* Understand the core concepts of RooFlow custom modes and memory bank functionality
+* Learn how to implement RooFlow in both existing and new projects
+* Master the structure and purpose of each memory bank component
+* Effectively use mode collaboration for different development tasks
+* Apply best practices for maintaining and updating the memory bank
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [What is RooFlow?](#what-is-rooflow)
+- [Documentation](#documentation)
+- [Memory Bank Structure](#memory-bank-structure)
+- [Global vs. Project-Specific Modes](#global-vs-project-specific-modes)
+- [Memory Bank Commands](#memory-bank-commands)
+- [Getting Started](#getting-started)
+- [Best Practices](#best-practices)
+
+## Prerequisites
+* Basic understanding of Roo Code and its capabilities
+* Familiarity with version control systems (Git recommended)
+* Access to the RooFlow package files
+* Administrative access to modify project configuration files
 
 ## What is RooFlow?
 
