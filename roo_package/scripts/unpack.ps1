@@ -41,13 +41,50 @@ try {
     Copy-Item -Path "$configDir\*" -Destination $targetConfigDir -Recurse -Force
     Write-Host "Copied config directory" -ForegroundColor Green
     
-    # Copy .roomodes file if it exists in the package
-    $roomodesPath = Join-Path -Path $packageDir -ChildPath ".roomodes"
-    if (Test-Path -Path $roomodesPath) {
-        Copy-Item -Path $roomodesPath -Destination (Join-Path -Path $currentDir -ChildPath ".roomodes") -Force
-        Write-Host "Copied .roomodes file" -ForegroundColor Green
+    # Handle .roomodes file (merge if exists, otherwise copy)
+    $packageRoomodesPath = Join-Path -Path $packageDir -ChildPath ".roomodes"
+    $targetRoomodesPath = Join-Path -Path $currentDir -ChildPath ".roomodes"
+
+    if (Test-Path -Path $packageRoomodesPath) {
+        if (Test-Path -Path $targetRoomodesPath) {
+            Write-Host "Merging existing .roomodes file with package version..." -ForegroundColor Yellow
+            try {
+                # Read and parse both files
+                $packageJson = Get-Content -Path $packageRoomodesPath -Raw | ConvertFrom-Json
+                $targetJson = Get-Content -Path $targetRoomodesPath -Raw | ConvertFrom-Json
+
+                # Ensure customModes arrays exist
+                if ($null -eq $packageJson.customModes) { $packageJson.customModes = @() }
+                if ($null -eq $targetJson.customModes) { $targetJson.customModes = @() }
+
+                # Get slugs from target modes
+                $targetSlugs = $targetJson.customModes | ForEach-Object { $_.slug }
+
+                # Add modes from package if slug doesn't exist in target
+                foreach ($packageMode in $packageJson.customModes) {
+                    if ($packageMode.slug -notin $targetSlugs) {
+                        Write-Host "Adding mode '$($packageMode.slug)' from package." -ForegroundColor Cyan
+                        $targetJson.customModes += $packageMode
+                    } else {
+                         Write-Host "Mode '$($packageMode.slug)' already exists in project, skipping." -ForegroundColor Gray
+                    }
+                }
+
+                # Write merged content back
+                $targetJson | ConvertTo-Json -Depth 10 | Set-Content -Path $targetRoomodesPath
+                Write-Host "Successfully merged .roomodes file." -ForegroundColor Green
+            } catch {
+                Write-Error "Failed to merge .roomodes file: $_. Trying simple copy instead."
+                Copy-Item -Path $packageRoomodesPath -Destination $targetRoomodesPath -Force
+                Write-Host "Copied .roomodes file (merge failed)." -ForegroundColor Yellow
+            }
+        } else {
+            # Target file doesn't exist, just copy
+            Copy-Item -Path $packageRoomodesPath -Destination $targetRoomodesPath -Force
+            Write-Host "Copied new .roomodes file from package." -ForegroundColor Green
+        }
     } else {
-        Write-Host "No .roomodes file found in package" -ForegroundColor Yellow
+        Write-Host "No .roomodes file found in package to copy or merge." -ForegroundColor Yellow
     }
     
     Write-Host "RooFlow package unpacked successfully!" -ForegroundColor Green

@@ -35,7 +35,21 @@ Before you begin, you'll need:
 
 The `confluence-uploader.ps1` script provides a simple way to convert Markdown files to ADF format and upload them to Confluence.
 
-### Setup
+### Quick Setup
+
+For a quick and guided setup of the Confluence integration, you can use the `setup-confluence-integration.ps1` script:
+
+```powershell
+.\setup-confluence-integration.ps1
+```
+
+This script will:
+1. Prompt for your Confluence credentials
+2. Update the configuration files
+3. Install and configure the MCP server
+4. Provide instructions for using the integration
+
+### Manual Setup
 
 1. **Configure the script** (optional):
    

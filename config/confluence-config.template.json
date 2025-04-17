@@ -1,0 +1,7 @@
+{
+  "confluenceUrl": "CONFLUENCE_URL_PLACEHOLDER",
+  "email": "EMAIL_PLACEHOLDER",
+  "apiToken": "API_TOKEN_PLACEHOLDER",
+  "spaceKey": "SPACE_KEY_PLACEHOLDER",
+  "parentId": "PARENT_ID_PLACEHOLDER"
+}
