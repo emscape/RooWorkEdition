@@ -45,3 +45,14 @@ memory-bank/
 memory-archives/
 !tools/adf/
 !docs/adf/
+!config/.rooignore
+.clinerules-default
+rooflow_logo_raw.png
+!/config/default-mode/.clinerules-default
+output.log
+claude-code-prompt.txt
+
+# Package files (from the other version)
+package-lock.json
+package.json
+!config/
